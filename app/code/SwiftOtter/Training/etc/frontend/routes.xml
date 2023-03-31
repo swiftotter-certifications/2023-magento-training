@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="standard">
+        <!-- mystore.com/training -->
+        <route id="swiftotter_training" frontName="training">
+            <module name="SwiftOtter_Training"/>
+        </route>
+    </router>
+</config>

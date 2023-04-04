@@ -1,0 +1,16 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <container name="store-list" htmlTag="section" htmlClass="store-list-section">
+                <block name="training_example"
+                       template="SwiftOtter_Training::training-template.phtml">
+                    <arguments>
+                        <argument name="isEnabled" xsi:type="boolean">true</argument>
+                    </arguments>
+                </block>
+            </container>
+        </referenceContainer>
+
+    </body>
+</page>

@@ -3,3 +3,32 @@
 <?php /** @var \Magento\Framework\View\Element\Template $block */
 
 echo 'Your XYZ is '. ($block->getData('isEnabled') ? 'enabled' : 'disabled');
+
+/** @var \SwiftOtter\Training\ViewModel\ViewModel $viewModel */
+$viewModel = $block->getData('viewModel');
+
+echo '<h1>'.$viewModel->getCustomString().'</h1>';
+
+// After plugin
+
+echo '<ul>';
+foreach ($viewModel->getListOfEUCountries() as $euCountry) {
+    echo '<li>'.$euCountry.'</li>';
+}
+echo '</ul>';
+
+// Around plugin
+
+echo '<div style="border: 1px solid #f00; padding: 10px;">'.$viewModel->getLazyMethod().'</div>';
+echo '<div style="border: 1px solid #f00; padding: 10px;">'.$viewModel->getLazyMethod().'</div>';
+echo '<div style="border: 1px solid #f00; padding: 10px;">'.$viewModel->getLazyMethod().'</div>';
+echo '<div style="border: 1px solid #f00; padding: 10px;">'.$viewModel->getLazyMethod().'</div>';
+echo '<div style="border: 1px solid #f00; padding: 10px;">'.$viewModel->getLazyMethod().'</div>';
+
+// Before Plugin
+
+echo '<ol>';
+foreach ($viewModel->getPriceList(['soap', 'bread', 'whatever']) as $sku => $price) {
+    echo '<li><strong>SKU: '.$sku.'</strong> costs you '.$price.'</li>';
+}
+echo '</ol>';

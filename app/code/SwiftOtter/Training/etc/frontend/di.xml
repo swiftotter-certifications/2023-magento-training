@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="SwiftOtter\Training\ViewModel\ViewModel">
+        <arguments>
+            <argument name="customString" xsi:type="string">My Own Text</argument>
+        </arguments>
+        <plugin name="SwiftOtter_Training::modify-eu-list" type="SwiftOtter\Training\Plugin\ViewModelUpdateEUCountryListPlugin" sortOrder="100"/>
+        <plugin name="SwiftOtter_Training::view-mode-lavoid-excessive-execution"
+                type="SwiftOtter\Training\Plugin\ViewModelAvoidExcessiveExecutionPlugin"
+                sortOrder="101"/>
+        <plugin name="SwiftOtter_Training::view-model-remove-option-from-price-list"
+                type="SwiftOtter\Training\Plugin\ViewModelRemoveOptionFromPriceListPlugin"
+                sortOrder="100"/>
+    </type>
+
+<!--    <type name="\Magento\Paypal\Block\Cart\ValidationMessages">-->
+<!--        <arguments>-->
+<!--            <argument name="cartHelper" xsi:type="object">My\Own\CartHelper</argument>-->
+<!--        </arguments>-->
+<!--    </type>-->
+<!--    <preference for="\Magento\Checkout\Helper\Cart" type="My\Own\CartHelper"/>-->
+</config>

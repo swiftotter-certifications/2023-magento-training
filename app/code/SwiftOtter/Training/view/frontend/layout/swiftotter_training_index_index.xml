@@ -7,6 +7,7 @@
                        template="SwiftOtter_Training::training-template.phtml">
                     <arguments>
                         <argument name="isEnabled" xsi:type="boolean">true</argument>
+                        <argument name="viewModel" xsi:type="object">SwiftOtter\Training\ViewModel\ViewModel</argument>
                     </arguments>
                 </block>
             </container>

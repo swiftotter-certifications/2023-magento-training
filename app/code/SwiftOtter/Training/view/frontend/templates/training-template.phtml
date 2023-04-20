@@ -9,6 +9,15 @@ $viewModel = $block->getData('viewModel');
 
 echo '<h1>'.$viewModel->getCustomString().'</h1>';
 
+// Loop of Products
+
+echo '<div style="border: 1px #00F; padding:25px;"><ol>';
+/** @var \Magento\Catalog\Api\Data\ProductInterface $product */
+foreach ($viewModel->getProducts() as $product) {
+    echo '<li>'.$product->getName().' costs: '.$product->getPrice().'</li>';
+}
+echo '</ol></div>';
+
 // After plugin
 
 echo '<ul>';
@@ -32,3 +41,7 @@ foreach ($viewModel->getPriceList(['soap', 'bread', 'whatever']) as $sku => $pri
     echo '<li><strong>SKU: '.$sku.'</strong> costs you '.$price.'</li>';
 }
 echo '</ol>';
+
+echo '<hr/>';
+
+echo '<h1>'.$viewModel->isAddressValid().'</h1>';

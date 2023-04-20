@@ -4,6 +4,10 @@
     <type name="SwiftOtter\Training\ViewModel\ViewModel">
         <arguments>
             <argument name="customString" xsi:type="string">My Own Text</argument>
+            <!-- ❗️ This is an example of Proxy class which is automatically generated.️ -->
+            <argument name="poorQualityVendorService" xsi:type="object">SwiftOtter\Training\Service\PoorQualityVendorService\Proxy</argument>
+            <!-- Example of Virtual Class usage -->
+            <argument name="addressValidationService" xsi:type="object">SwiftOtter\Training\Service\BillingAddressValidationService</argument>
         </arguments>
         <plugin name="SwiftOtter_Training::modify-eu-list" type="SwiftOtter\Training\Plugin\ViewModelUpdateEUCountryListPlugin" sortOrder="100"/>
         <plugin name="SwiftOtter_Training::view-mode-lavoid-excessive-execution"
@@ -13,6 +17,13 @@
                 type="SwiftOtter\Training\Plugin\ViewModelRemoveOptionFromPriceListPlugin"
                 sortOrder="100"/>
     </type>
+
+    <virtualType name="SwiftOtter\Training\Service\BillingAddressValidationService"
+                type="SwiftOtter\Training\Service\AddressValidationService">
+        <arguments>
+            <argument name="type" xsi:type="string">billing</argument>
+        </arguments>
+    </virtualType>
 
 <!--    <type name="\Magento\Paypal\Block\Cart\ValidationMessages">-->
 <!--        <arguments>-->

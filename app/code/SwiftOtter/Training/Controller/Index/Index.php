@@ -2,6 +2,8 @@
 declare(strict_types=1);
 namespace SwiftOtter\Training\Controller\Index;
 
+use Magento\Catalog\Model\Product;
+use Magento\Framework\App\ObjectManager;
 use Magento\Framework\App\ResponseInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Framework\Controller\ResultInterface;
